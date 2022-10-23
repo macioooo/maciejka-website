@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&display=swap");
+
+:root{
+    --primary-color:#0077b5;
+    --secondary-color:rgb(8, 4, 36);
+}
+
+/*wyrównywanie divów, usunięcie marginesów które są domyślnie na stronie*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  
+}
+/*line height zmienia odległość linijek od siebie*/
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*Pasek nawigacji*/
+.nav ul {
+  display: flex;
+}
+.nav .flex {
+  justify-content: space-between;
+}
+.nav a {
+  color: #fff;
+  padding: 20px;
+  margin: 0 5px;
+}
+a:hover {
+  border-bottom: 1px solid #fff;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+h1,
+h2 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+p {
+  margin: 10px 0;
+}
+
+/*obrazek będzie trzymany w kontenerze dzięki width:100% i nie wyjdzie poza niego*/
+img {
+  width: 100%;
+}
+.nav {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 70px;
+}
+/*showcase*/
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color:#fff;
+    position:relative;
+}
+.showcase h1{
+    font-size:40px;
+}
+
+.showcase input{
+    margin:10px 0;
+}
+
+.showcase .grid{
+    grid-template-columns:55% 45%;
+    gap:30px;
+    overflow:visible;
+}
+.showcase-text{
+  animation: slideInFromLeft 1s ease-in;
+}
+input[type="text"]:hover, input[type="email"]:hover{
+    background-color: rgb(241, 241, 241); 
+    color:#444;
+    border-radius: 5px;
+
+    
+}
+
+input[type="text"]:focus, input[type="email"]:focus{
+    background-color: rgb(235, 232, 232); ;
+    color:#444;
+    outline:none;
+    
+}
+
+
+.showcase::before,
+.showcase::after{
+    content:"";
+    position:absolute;
+    height:100px;
+    bottom:-70px;
+    right:0;
+    left:0;
+    background:#fff;
+    transform:skewY(-3deg);
+}
+
+.showcase-form{
+    position:relative;
+    top:60px;
+    height:350px; 
+    width:400px;
+    padding:40px;
+    z-index:100;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+    
+}
+.showcase-form input[type="text"], input[type="email"]{
+    width:100%;
+    
+    height:40px;
+    border:0px;
+    border-bottom:1px solid #b4becb;
+    font-size:16px;
+    
+}
+/*staty*/
+.stats{
+  padding-top: 100px;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading{
+    max-width:500px;
+    margin:auto;
+    font-size:22px;
+}
+.text-secondary{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.stats .grid h3{
+    font-size:35px;
+}
+.hidden{
+  visibility: hidden;
+  height: 0px;
+  margin:0;
+}
+/*CLI*/
+
+.cli .grid{
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+}
+
+.cli .grid >*:first-child{
+  grid-column: 1 / span 2; /*zajmuje 2 kolumny*/
+  grid-row: 1 / span 2; /*zajmuje 2 wiersze*/
+}
+/*Cloud*/
+
+.cloud{
+  margin-top:150px;
+    height:400px;
+    color:#fff;
+    overflow-y:hidden;
+    background:var(--primary-color)
+}
+
+/*Languages*/
+.languages{
+  margin-top: -25px;
+  overflow-x: hidden;
+  text-align: center;
+  margin-bottom:50px;
+}
+.languages .card{
+margin: 18px 10px 40px;
+transition: transform 0.2s ease-in-out;
+}
+
+.languages .flex{
+  flex-wrap:wrap;
+}
+
+.font-lng{
+  font-size:20px;
+  width:120px;
+  
+}
+
+.languages .card:hover{
+  transform:translateY(-15px);
+}
+.php{
+ margin-top:20px;
+}
+/*Features*/
+.features-head img, .docs-head img{
+  width:200px;
+  justify-self: flex-end;
+}
+.features-sub-head img{
+  width:300px;
+  justify-self: flex-end;
+}
+.features-main i{
+  margin-right:20px;
+  
+}
+.features-main .grid{
+  padding:30px;
+}
+.features-main .card:first-child{
+  grid-column: 1/3 span;
+}
+.features-main .card:nth-child(2){
+  grid-column: 1/2 span;
+}
+/*docs*/
+.docs-main h3{
+  margin:20px 0;
+}
+.docs-main .grid{
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+.docs-main nav li{
+  font-size:17px;
+  padding-bottom: 5px;
+  margin-bottom:5px;
+  border-bottom: 1px solid #ccc
+}
+.docs-main i{
+  margin-right:10px;
+  color:white
+}
+.docs-main a:hover{
+  font-weight: bold;
+}
+.docs-main .alert-success{
+  background-color: rgb(49, 170, 49);
+  color:#fff;
+  padding-left: 10px;
+}
+pre, code{
+  background-color: #333;
+  color:#fff;
+
+
+  padding:10px;
+  
+}
+/*footer*/
+.footer{
+  background-color: var(--secondary-color);
+  color:white;
+ 
+
+  
+}
+.clr{
+
+  color: #fff;
+  font-size:30px;
+  padding: 8px;;
+  
+}
+.white-anc{
+  color:#fff;
+}
+
+/*animacje */
+@keyframes slideInFromLeft{
+  0%{
+    transform:translateX(-100%);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+}
+@keyframes slideInFromRight{
+  0%{
+    transform:translateX(100%);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+}
+@keyframes slideInFromTop{
+  0%{
+    transform:translateY(-100%);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+@keyframes slideInFromBottom{
+  0%{
+    transform:translateY(100%);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+/*tablety*/
+@media(max-width:768px){
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid,
+  .features-main .grid,
+  .docs-main .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .showcase{
+    height:auto;
+    
+  }
+  
+  .showcase-text{
+    text-align:center;
+    margin-top:40px;
+    animation: slideInFromBottom 0.7s ease-in;
+  }
+  .showcase-form{
+    justify-self: center;
+    margin:auto;
+    animation: slideInFromBottom 1s ease-in;
+  }
+  .cli .grid >*:first-child{
+    grid-column: 1;
+    grid-row: 1;
+}
+.cloud{
+  height: auto;
+}
+.mobile{
+  height:auto;
+}
+.features-head,
+.features-sub-head,
+.docs-head{
+  text-align:center;
+}
+.features-head img,
+.features-sub-head img,
+.docs-head img{
+  justify-self:center;
+}
+.features-main .grid > *:first-child,
+.features-main .grid > *:nth-child(2){
+  grid-column: 1;
+}
+}
+
+/*telefony*/
+@media(max-width:500px){
+  .nav{
+    height:110px;
+  }
+.nav .flex{
+  flex-direction: column;
+}
+.nav ul{
+  padding:10px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+}
